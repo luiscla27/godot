@@ -6,8 +6,9 @@ os: windows
 
 before_install:
   # Set PATH for homebrew pip3 installs
-  - pip install SCons
+  choco install python --version=3.7.2
   - PATH="$HOME/Library/Python/3.7/bin:${PATH}"
+  python -m pip install scons
 
 
 install:
