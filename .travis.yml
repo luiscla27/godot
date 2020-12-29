@@ -3,19 +3,10 @@ language: cpp
 
 os: windows
 
-env:
-  - MYUSEMC=true MYPYTHON_VERSION=3.7
-  - MYUSEMC=false
-  
-matrix:
-  include:
-    - env:
-      - BUILD=scons
-
-
 
 before_install:
   # Set PATH for homebrew pip3 installs
+  - pip install SCons
   - PATH="$HOME/Library/Python/3.7/bin:${PATH}"
 
 
