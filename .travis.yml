@@ -7,13 +7,14 @@ env:
   - MYUSEMC=true MYPYTHON_VERSION=3.7
   - MYUSEMC=false
 
-addons:
-  apt:
-    packages:
-      - scons
-      - python3
-      - python3-protobuf
-      - protobuf-compiler
+
+before_install:
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew install expat gettext
+  - HOMEBREW_NO_AUTO_UPDATE=1 brew install scons;
+
+  # Set PATH for homebrew pip3 installs
+  - PATH="$HOME/Library/Python/3.7/bin:${PATH}"
+
 
 install:
   scons platform=windows
