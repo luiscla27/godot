@@ -41,5 +41,4 @@ cache:
 
 install:
   - python -m ensurepip
-  - python -m pip install scons
   - scons platform=windows
